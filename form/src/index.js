@@ -35,7 +35,13 @@ class Sample extends Component{
 
   constructor(){
     super();
-    console.log(this); 
+    this.state={
+      name:"vasanth",
+      age:21,
+      course:"developer",
+
+    } 
+
   }
 
    getDate (param){
@@ -43,9 +49,17 @@ class Sample extends Component{
    }
 
 
+   updates =() =>{
+    this.setState({age:90})
+   }
+
   render(){
-    console.log(this);
+    
       return<div>
+        {this.state.age}
+        <button onClick={()=> this.updates.call(this)}>click this1</button>
+        <button onClick={()=> this.updates(this)}>click this2</button>
+        <button onClick={this.updates}>click this3</button>
         class components <First date="react class" get={this.getDate}/>{" "}
         <Secound/>
 
