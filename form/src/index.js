@@ -8,6 +8,7 @@ import Header from './header';
 
 
 
+
  //function Sample(){
 //   return<div>
 //        <Bodys/>
@@ -16,58 +17,114 @@ import Header from './header';
 
 
 
-class First extends Component{
-  render(){
-    console.log("this",this);
-      return<div> first class components{this.props.date} <button onClick={()=> this.props.get("dataa")}>click me</button></div>
-  }
-}
+// class First extends Component{
+//   render(){
+//     console.log("this",this);
+//       return<div> first class components{this.props.date} <button onClick={()=> this.props.get("dataa")}>click me</button></div>
+//   }
+// }
 
-class Secound extends Component{
-  render (){
-    return<div>secound class componets</div>
-  }
-}
+// class Secound extends Component{
+//   render (){
+//     return<div>secound class componets</div>
+//   }
+// }
 
 
 
 class Sample extends Component{
+  
+//    ///react lifesycle/////////////
 
-  constructor(){
+      state ={
+        name:"lifesycle",
+
+      }
+    
+
+
+
+   constructor(){
     super();
-    this.state={
-      name:"vasanth",
-      age:21,
-      course:"developer",
-
-    } 
-
+    console.log("construnctor");
   }
 
-   getDate (param){
-    console.log("date",param);
-   }
 
+  componentDidMount(){
+    console.log("componentDidMount");
+  }
 
-   updates =() =>{
-    this.setState({age:90})
-   }
+  componentDidUpdate(){
+    console.log("componentDidUpdate", this.state.name);
+  }
+
 
   render(){
-    
-      return<div>
-        {this.state.age}
-        <button onClick={()=> this.updates.call(this)}>click this1</button>
-        <button onClick={()=> this.updates(this)}>click this2</button>
-        <button onClick={this.updates}>click this3</button>
-        class components <First date="react class" get={this.getDate}/>{" "}
-        <Secound/>
+    console.log("render");
 
-
+    return <div>
+      home{this.state.name}{" "}
+      <button onClick={()=>this.setState({name:"react life sycles"})}>click me</button>
       </div>
-      
+   
   }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+  ///state try///////////////////////
+  // constructor(){
+  //   super();
+  //   this.state={
+  //     name:"vasanth",
+  //     age:21,
+  //     course:"developer",
+
+  //   } 
+
+  // }
+
+  //  getDate (param){
+  //   console.log("date",param);
+  //  }
+
+
+  //  updates =() =>{
+  //   this.setState({age:90})
+  //  }
+
+  // render(){
+    
+  //     return<div>
+  //       {this.state.age}
+  //       <button onClick={()=> this.updates.call(this)}>click this1</button>
+  //       <button onClick={()=> this.updates(this)}>click this2</button>
+  //       <button onClick={this.updates}>click this3</button>
+  //       class components <First date="react class" get={this.getDate}/>{" "}
+  //       <Secound/>
+
+
+//       </div>
+      
+//   }
+ //}
+
+
+
+
+
+
+
  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
